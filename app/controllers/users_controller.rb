@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.all.order(:games_count)
 
-    render json: @users
+    render 'index', status: :ok
   end
 
   # GET /users/1
