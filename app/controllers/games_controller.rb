@@ -3,9 +3,7 @@ class GamesController < ApplicationController
 
   # GET /games
   def index
-    @games = Game.all
-
-    render json: @games
+    @games = Game.all.includes(:winner)
   end
 
   # GET /games/1
